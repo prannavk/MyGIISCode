@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="sizeUtil"
+            type="com.giis.mobileappproto1.data.models.DimensionsBindingUtil" />
+
+        <variable
+            name="bindPost"
+            type="com.giis.mobileappproto1.data.models.FeedPostDTO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/post_uni">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="8dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="10dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/poster_pfp"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:src="@drawable/pfpbetteridea"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintTop_toTopOf="@id/top_divider" />
+
+        <TextView
+            android:id="@+id/poster_Title_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/notosans_bold"
+            android:text="@{bindPost.postCreatorName}"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toTopOf="@id/poster_posted_details"
+            app:layout_constraintStart_toEndOf="@id/poster_pfp"
+            app:layout_constraintTop_toTopOf="@id/top_divider"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/poster_posted_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/notosans_regular"
+            android:textColor="@color/dim_gray"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@id/poster_pfp"
+            app:layout_constraintStart_toEndOf="@id/poster_pfp"
+            app:layout_constraintTop_toBottomOf="@id/poster_Title_Name"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/meatball_post_menu"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:src="@drawable/meatballthreedots"
+            app:layout_constraintBottom_toBottomOf="@id/poster_posted_details"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="@id/poster_Title_Name" />
+
+        <TextView
+            android:id="@+id/agedPostTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:fontFamily="@font/notosans_regular"
+            android:textColor="@color/dim_gray"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@id/meatball_post_menu"
+            app:layout_constraintEnd_toStartOf="@id/meatball_post_menu"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/poster_posted_details"
+            app:layout_constraintTop_toTopOf="@id/meatball_post_menu" />
+
+        <TextView
+            android:id="@+id/post_Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:fontFamily="@font/notosans_regular"
+            android:lineBreakStyle="normal"
+            android:maxLines="7"
+            android:padding="@dimen/_4sdp"
+            android:text="@{bindPost.postText}"
+            android:textColor="@color/text_black"
+            android:textDirection="firstStrongLtr"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toTopOf="@id/post_Images_box"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/poster_pfp" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/post_Images_box"
+            fetchImagesFromTheseUrls="@{bindPost}"
+            referenceSizes="@{sizeUtil}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:foregroundGravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_4sdp"
+            app:alignContent="flex_start"
+            app:alignItems="baseline"
+            app:dividerDrawableHorizontal="@drawable/flexbox_horz_divider"
+            app:dividerDrawableVertical="@drawable/flexlayout_vert_divider"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="center"
+            app:layout_constraintBottom_toTopOf="@id/tags_linearlayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_Text"
+            app:showDividerHorizontal="middle"
+            app:showDividerVertical="middle">
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <LinearLayout
+            android:id="@+id/tags_linearlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/tag_drawable"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_8sdp"
+            app:layout_constraintStart_toEndOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/post_Images_box">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tag_icon_iv"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:src="@drawable/tag_icon"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rep_Tag_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosans_regular"
+                android:text="@string/tags_sample"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9ssp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/post_demarcation_Tv"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:background="@color/dim_gray"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/tags_linearlayout" />
+
+        <TextView
+            android:id="@+id/post_comments_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:drawablePadding="@dimen/_7sdp"
+            android:fontFamily="@font/notosans_regular"
+            android:padding="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:text="@{String.valueOf(bindPost.postCommentsCount)}"
+            android:textColor="@color/dim_gray"
+            android:textSize="@dimen/_9ssp"
+            app:drawableStartCompat="@drawable/comments"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/post_demarcation_Tv" />
+
+        <TextView
+            android:id="@+id/post_acknowledgements_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:drawablePadding="@dimen/_7sdp"
+            android:fontFamily="@font/notosans_regular"
+            android:padding="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:text="@{String.valueOf(bindPost.postAcknowledgeCount)}"
+            android:textColor="@color/dim_gray"
+            android:textSize="@dimen/_9ssp"
+            app:drawableStartCompat="@drawable/acknowledge"
+            app:layout_constraintStart_toEndOf="@id/post_comments_counter"
+            app:layout_constraintTop_toBottomOf="@id/post_demarcation_Tv" />
+
+        <TextView
+            android:id="@+id/post_shares_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:drawablePadding="@dimen/_7sdp"
+            android:fontFamily="@font/notosans_regular"
+            android:padding="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:textColor="@color/dim_gray"
+            android:textSize="@dimen/_9ssp"
+            app:drawableStartCompat="@drawable/share"
+            app:layout_constraintStart_toEndOf="@id/post_acknowledgements_counter"
+            app:layout_constraintTop_toBottomOf="@id/post_demarcation_Tv" />
+
+        <TextView
+            android:id="@+id/post_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_2sdp"
+            android:fontFamily="@font/notosans_regular"
+            android:text="@string/more"
+            android:textColor="@color/giis_purple"
+            android:textSize="@dimen/_10ssp"
+            app:drawableEndCompat="@drawable/drop_more"
+            app:layout_constraintBottom_toBottomOf="@id/post_shares_counter"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/post_shares_counter"
+            app:layout_constraintTop_toTopOf="@id/post_shares_counter" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_comments_counter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

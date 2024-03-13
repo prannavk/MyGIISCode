@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottomsheetbg_1"
+    android:backgroundTint="@color/white"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iphone_like_notch"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@color/tag_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.iphone_notch" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/dismiss_cross"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:background="@color/white"
+        android:src="@drawable/cp_cancelcross"
+        app:layout_constraintEnd_toEndOf="@id/guideline4e"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/verifyTitleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:lines="2"
+        android:maxLines="2"
+        android:minLines="1"
+        android:text="@string/verify_your_mobile_number"
+        android:textColor="@color/tex_dim"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/dismiss_cross" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/OotpSentMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/otpissent"
+        android:textColor="@color/tex_dim"
+        android:textSize="@dimen/_11ssp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toBottomOf="@id/verifyTitleTV" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_14sdp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/_14sdp" />
+
+
+    <com.chaos.view.PinView
+        android:id="@+id/otpMainPinView"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:cursorVisible="true"
+        android:elevation="4dp"
+        android:fontFamily="@font/notosans_bold"
+        android:inputType="number"
+        android:itemBackground="@drawable/custom_edittext"
+        android:textColor="@color/tex_dim"
+        android:textSize="@dimen/_12ssp"
+        app:cursorColor="@color/giis_purple"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="true"
+        app:itemCount="4"
+        app:itemHeight="@dimen/_50sdp"
+        app:itemRadius="4dp"
+        app:itemSpacing="@dimen/_16sdp"
+        app:itemWidth="@dimen/_40sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/OotpSentMessage"
+        app:lineColor="@color/giis_purple"
+        app:lineWidth="2dp"
+        app:viewType="rectangle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/invalidOTPMsgTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:fontFamily="@font/notosans_regular"
+        android:text="@string/otp_error_msg"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/otpMainPinView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/otpMainPinView"
+        app:layout_constraintTop_toBottomOf="@id/otpMainPinView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/validateButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:background="@drawable/custom_button"
+        android:backgroundTint="@color/giis_purple"
+        android:enabled="false"
+        android:fontFamily="@font/notosans_bold"
+        android:text="@string/validate_otp"
+        android:textAllCaps="false"
+        android:textColor="@color/white_smoke"
+        app:layout_constraintEnd_toEndOf="@id/guideline4e"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toBottomOf="@id/invalidOTPMsgTV" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/resendOtpTimerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:layout_marginBottom="@dimen/_94sdp"
+        android:fontFamily="@font/notosans_regular"
+        android:text="@string/resend_otp_base_text"
+        android:textColor="@color/giis_purple"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/validateButton"
+        app:layout_constraintStart_toStartOf="@id/validateButton"
+        app:layout_constraintTop_toBottomOf="@id/validateButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView-->
+    <!--        android:id="@+id/blankTV"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="@dimen/_100sdp"-->
+    <!--        android:layout_marginTop="@dimen/_10sdp"-->
+    <!--        android:background="@color/white"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/guideline4"-->
+    <!--        app:layout_constraintVertical_bias="0.0" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

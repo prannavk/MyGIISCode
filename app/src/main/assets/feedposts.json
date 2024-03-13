@@ -1,0 +1,39 @@
+[
+  {
+    "postId": 0,
+    "postCreatorName": "Paula Redd",
+    "postCreatorDetails": "7C Grade, Bengaluru",
+    "postCreationDateTime": "Date(122, 12, 3, 7, 40)",
+    "postImageStatus": true,
+    "postText": "We are going to have a mock debate session tomorrow in class before we face the actual inter-school debate competition which is to be held soon.",
+    "postImageList": [
+      "https://images.pexels.com/photos/7092613/pexels-photo-7092613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/289737/pexels-photo-289737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/5905445/pexels-photo-5905445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/8199165/pexels-photo-8199165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/955389/pexels-photo-955389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "postAcknowledgeCount": 233,
+    "postCommentsCount": 411,
+    "postShareCount": 81,
+    "postTagsBoolean": true,
+    "postTagsList": [
+      "Kunalika Yadav",
+      "Krishna Kumar",
+      "Dharmesh Pal",
+      "Mithali Pal"
+    ],
+    "postPollData": null,
+    "postPollStatus": false,
+    "postScheduledDateTime": null,
+    "postScheduledFlag": false,
+    "postVideoStatus": false,
+    "postVideoUrlString": null,
+    "postCreationErrorFlag": false,
+    "postLabel": "LabelType.IMAGES",
+    "postCommentsOn": true
+  }
+]
+
+
+

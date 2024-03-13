@@ -1,0 +1,9 @@
+{
+  "pName" : "Ajay",
+  "pSal" : 25000,
+  "pJob" : "Helpdesk Engineer",
+  "pCalls" : [1, 7, 8, 5],
+  "pCod" : [null, 266, 321, 435, null, 728],
+  "pLocations" : ["Hyderabad", "Pune", "Bengaluru"],
+  "pBloodGroup" : "O Positive"
+}

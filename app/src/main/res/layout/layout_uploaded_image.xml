@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/uploaded_image_iv_tile"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_80sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/image_tile_remove_btn"
+        android:layout_width="@dimen/_27sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:background="@drawable/cross_circle_upimage"
+        android:elevation="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/uploaded_image_iv_tile"
+        app:layout_constraintEnd_toEndOf="@id/uploaded_image_iv_tile"
+        app:layout_constraintStart_toEndOf="@id/uploaded_image_iv_tile"
+        app:layout_constraintTop_toTopOf="@id/uploaded_image_iv_tile"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

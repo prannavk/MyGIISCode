@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <size android:width="@dimen/_27sdp" android:height="@dimen/_27sdp" />
+                    <solid android:color="@color/light_cyan_blue" />
+                    <stroke android:width="@dimen/_1sdp" android:color="@color/dim_gray" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/cp_cancelcross" android:gravity="center" />
+        </layer-list>
+    </item>
+
+    <item android:state_hovered="true">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <size android:width="@dimen/_27sdp" android:height="@dimen/_27sdp" />
+                    <solid android:color="@color/light_cyan_blue" />
+                    <stroke android:width="@dimen/_1sdp" android:color="@color/dim_gray" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/cp_cancelcross" android:gravity="center" />
+        </layer-list>
+    </item>
+
+    <item android:state_focused="true">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <size android:width="@dimen/_27sdp" android:height="@dimen/_27sdp" />
+                    <solid android:color="@color/light_cyan_blue" />
+                    <stroke android:width="@dimen/_1sdp" android:color="@color/dim_gray" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/cp_cancelcross" android:gravity="center" />
+        </layer-list>
+    </item>
+
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <size android:width="@dimen/_27sdp" android:height="@dimen/_27sdp" />
+                    <solid android:color="@color/white" />
+                    <stroke android:width="@dimen/_1sdp" android:color="@color/dim_gray" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/cancel_cross_top" android:gravity="center" />
+        </layer-list>
+    </item>
+</selector>
