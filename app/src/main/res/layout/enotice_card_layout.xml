@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="noticeItem"
+            type="com.giis.mobileappproto1.data.models.NoticeDTO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/noticeBoardCard_x"
+            android:layout_width="@dimen/_255sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:elevation="@dimen/_9sdp"
+            android:translationZ="@dimen/_6sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/borderBoxColor"
+                    android:layout_width="@dimen/_7sdp"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_cyan_blue"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/noticeType_Card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/notice_type_drawble"
+                    android:fontFamily="@font/notosans_bold"
+                    android:paddingHorizontal="@dimen/_14sdp"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:text="@{noticeItem.noticeType}"
+                    android:textColor="@color/light_cyan_blue"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/borderBoxColor"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/noticeTitle_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/notosans_bold"
+                    android:maxLines="1"
+                    android:text="@{noticeItem.noticeTitle}"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/noticeType_Card"
+                    app:layout_constraintTop_toBottomOf="@id/noticeType_Card" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/noticeSource_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="@{noticeItem.noticeSource}"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintEnd_toEndOf="@id/noticeTitle_Tv"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/noticeTitle_Tv"
+                    app:layout_constraintTop_toBottomOf="@id/noticeTitle_Tv" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/noticeDesc_Tv"
+                    android:layout_width="@dimen/_210sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:text="@string/sample_notice_desc"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/noticeTitle_Tv"
+                    app:layout_constraintTop_toBottomOf="@id/noticeSource_Tv"
+                    app:layout_constraintVertical_bias="1.0"
+                    tools:ignore="UnusedAttribute" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

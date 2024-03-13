@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/mainAppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="noScroll">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/mainGraphicToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_7sdp"
+                    android:shadowColor="@color/black"
+                    app:layout_collapseMode="pin">
+
+                    <include
+                        android:id="@+id/mainToolbar_Content"
+                        layout="@layout/home_toolbar" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragments_container_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        </androidx.fragment.app.FragmentContainerView>
+
+        <!--        <eightbitlab.com.blurview.BlurView-->
+        <!--            android:id="@+id/blurView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:blurOverlayColor="@color/colorOverlay">-->
+
+        <!--        </eightbitlab.com.blurview.BlurView>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_ConstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_64sdp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/white"
+            app:layout_anchor="@id/fragments_container_main"
+            app:layout_anchorGravity="bottom">
+
+            <io.ak1.BubbleTabBar
+                android:id="@+id/bottomBubbleTabBarMain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:background="@drawable/bubblebar_bg1"
+                android:padding="@dimen/_6sdp"
+                android:translationZ="@dimen/_3sdp"
+                app:bubbletab_custom_font="@font/notosans_regular"
+                app:bubbletab_disabled_icon_color="@color/un_light"
+                app:bubbletab_horizontal_padding="@dimen/_14sdp"
+                app:bubbletab_icon_padding="@dimen/_6sdp"
+                app:bubbletab_icon_size="@dimen/_14sdp"
+                app:bubbletab_menuResource="@menu/bubble_bar_menu"
+                app:bubbletab_tab_corner_radius="@dimen/_32sdp"
+                app:bubbletab_title_size="@dimen/_8ssp"
+                app:bubbletab_vertical_padding="@dimen/_9sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

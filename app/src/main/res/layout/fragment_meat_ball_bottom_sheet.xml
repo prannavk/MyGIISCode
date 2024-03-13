@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottomsheetbg_1"
+    android:backgroundTint="@color/white"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    tools:context=".ui.bottomsheets.MeatBallBottomSheetFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iphone_like_effect"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@color/tag_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.iphone_notch" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/savepost_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/ripple_effect_gptgiven"
+        android:drawableStart="@drawable/bookmarkpost"
+        android:drawablePadding="@dimen/_7sdp"
+        android:fontFamily="@font/notosans_regular"
+        android:text="@string/save_post"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iphone_like_effect" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/report_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:background="@drawable/ripple_effect_gptgiven"
+        android:drawableStart="@drawable/faqreporticon"
+        android:drawablePadding="@dimen/_7sdp"
+        android:fontFamily="@font/notosans_regular"
+        android:text="@string/report"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_space_extract"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/savepost_option" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/un_savepost_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/ripple_effect_gptgiven"
+        android:drawableStart="@drawable/unbookmark_icon"
+        android:drawablePadding="@dimen/_7sdp"
+        android:fontFamily="@font/notosans_regular"
+        android:text="Unsave Post"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_space_extract"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iphone_like_effect" />
+
+
+    <View
+        android:id="@+id/bottom_space_extract"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/notsavedposts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:visibility="gone"
+        app:constraint_referenced_ids="report_option,savepost_option"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iphone_like_effect" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/savedposts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:visibility="gone"
+        app:constraint_referenced_ids="un_savepost_option"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iphone_like_effect" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

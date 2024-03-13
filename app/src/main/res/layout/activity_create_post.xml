@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.CreatePostActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/createPostToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:clipToPadding="false"
+            android:elevation="@dimen/_8sdp"
+            android:outlineProvider="bounds"
+            android:translationZ="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/tb_incl"
+                layout="@layout/activity_toolbar_layout_h" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/createPostToolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_13sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_13sdp" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/creator_badge"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:src="@drawable/cp_post_creator"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/creator_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="@string/sample_name"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/creator_badge"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/creator_badge"
+                    app:layout_constraintTop_toTopOf="@id/creator_badge"
+                    app:layout_constraintVertical_bias="0.75" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/post_actual_text_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/custom_edittext"
+                    android:backgroundTint="@color/cp_box"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/creator_badge">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/create_post_text_et"
+                        style="@style/MyAppCompatEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosans_medium"
+                        android:gravity="top"
+                        android:hint="@string/whats_on_your_mind"
+                        android:inputType="textMultiLine"
+                        android:lines="4"
+                        android:maxLines="100"
+                        android:overScrollMode="ifContentScrolls"
+                        android:padding="@dimen/_8sdp"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical"
+                        android:scrollHorizontally="false"
+                        android:textColor="@color/text_black"
+                        android:textColorHint="@color/cp_hint"
+                        android:textSize="@dimen/_11ssp"
+                        tools:text="There will be an announcement regarding the covid protocols to be followed in the campus" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/uploaded_images_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/media_picker_launch_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:backgroundTint="@color/cp_box"
+                        android:src="@drawable/cp_attachment" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/label_badge"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/tag_icon"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/post_actual_text_input" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/label_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="@string/label"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/label_badge"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/label_badge"
+                    app:layout_constraintTop_toTopOf="@id/label_badge"
+                    app:layout_constraintVertical_bias="0.75" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/label_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/custom_spinner"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/label_badge" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/post_to_badge"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/cp_post_to_comm"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/label_spinner" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/post_to_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="@string/post_to"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/post_to_badge"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/post_to_badge"
+                    app:layout_constraintTop_toTopOf="@id/post_to_badge"
+                    app:layout_constraintVertical_bias="0.75" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/post_to_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/custom_spinner"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/post_to_badge" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tag_people_badge"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/cp_tagpeople"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/post_to_spinner" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tag_people_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="@string/tag_people"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/tag_people_badge"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/tag_people_badge"
+                    app:layout_constraintTop_toTopOf="@id/tag_people_badge"
+                    app:layout_constraintVertical_bias="0.75" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tag_people_spinner_Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:background="@drawable/custom_spinner"
+                    android:fontFamily="@font/notosans_regular"
+                    android:outlineProvider="none"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:text="@string/please_select_btn"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/BasicTextView"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/tag_people_badge" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/selected_tags_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/tag_people_spinner_Btn">
+
+                    <TextView
+                        android:id="@+id/tag_select_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:background="@drawable/select_tag_box"
+                        android:drawablePadding="@dimen/_4sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:textAppearance="@style/BasicTextView"
+                        android:textColor="@color/text_black"
+                        android:visibility="gone"
+                        app:drawableEndCompat="@drawable/cp_cancelcross"
+                        tools:text="Kyara Brown  " />
+
+                    <TextView
+                        android:id="@+id/tag_select_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:background="@drawable/select_tag_box"
+                        android:drawablePadding="@dimen/_4sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:textAppearance="@style/BasicTextView"
+                        android:textColor="@color/text_black"
+                        android:visibility="gone"
+                        app:drawableEndCompat="@drawable/cp_cancelcross"
+                        tools:text="Cathy Banks  " />
+
+                    <TextView
+                        android:id="@+id/tag_select_rest_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/select_tag_box"
+                        android:drawablePadding="@dimen/_4sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:textAppearance="@style/BasicTextView"
+                        android:textColor="@color/giis_purple"
+                        android:visibility="gone"
+                        tools:text="+23 " />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/schedule_post_switch_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/schedule_post"
+                    android:textAppearance="@style/BasicTextView"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/selected_tags_layout" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/schedule_post_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_thumb_1"
+                    app:layout_constraintBottom_toBottomOf="@id/schedule_post_switch_text"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintTop_toTopOf="@id/schedule_post_switch_text"
+                    app:track="@drawable/switch_track_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/post_notifs_switch_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/post_notifications"
+                    android:textAppearance="@style/BasicTextView"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/schedule_post_switch_text" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/notifs_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_thumb_1"
+                    app:layout_constraintBottom_toBottomOf="@id/post_notifs_switch_text"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintTop_toTopOf="@id/post_notifs_switch_text"
+                    app:track="@drawable/switch_track_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/comments_switch_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/comments"
+                    android:textAppearance="@style/BasicTextView"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/post_notifs_switch_text" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/comments_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_thumb_1"
+                    app:layout_constraintBottom_toBottomOf="@id/comments_switch_text"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintTop_toTopOf="@id/comments_switch_text"
+                    app:track="@drawable/switch_track_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/share_ext_switch_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/share_with_external_applications"
+                    android:textAppearance="@style/BasicTextView"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/comments_switch_text" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/share_ext_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/switch_thumb_1"
+                    app:layout_constraintBottom_toBottomOf="@id/share_ext_switch_text"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintTop_toTopOf="@id/share_ext_switch_text"
+                    app:track="@drawable/switch_track_1" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/create_this_post_Button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_45sdp"
+                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:background="@drawable/post_button_btn_bg"
+                    android:enabled="false"
+                    android:text="@string/post"
+                    android:textAllCaps="false"
+                    android:textColor="@color/post_btn_text_clrs"
+                    app:layout_constraintEnd_toStartOf="@id/guideline6"
+                    app:layout_constraintStart_toEndOf="@id/guideline5"
+                    app:layout_constraintTop_toBottomOf="@id/share_ext_switch_text" />
+
+                <View
+                    android:id="@+id/bottom_edge_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp"
+                    android:background="@color/white"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/create_this_post_Button" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

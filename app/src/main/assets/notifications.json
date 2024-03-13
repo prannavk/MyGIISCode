@@ -1,0 +1,146 @@
+[
+  {
+    "notificationMessage": "Rajesh has posted Images to Maths (AY21)",
+    "notificationPostedTime": 1688961732499,
+    "isNotificationRequest": false,
+    "isTag": false,
+    "isRead": false,
+    "notId": 1
+  },
+  {
+    "notificationMessage": "Rajesh has requested to join 6A Maths (AY21)",
+    "notificationPostedTime": 1688958132499,
+    "isNotificationRequest": true,
+    "isTag": false,
+    "isRead": false,
+    "notId": 2
+  },
+  {
+    "notificationMessage": "Rajesh has posted images to Maths (AY21)",
+    "notificationPostedTime": 1688939112499,
+    "isNotificationRequest": false,
+    "isTag": false,
+    "isRead": false,
+    "notId": 3
+  },
+  {
+    "notificationMessage": "Vijay has posted images to Maths (AY21)",
+    "notificationPostedTime": 1688785051000,
+    "isNotificationRequest": false,
+    "isTag": false,
+    "isRead": true,
+    "notId": 4
+  },
+  {
+    "notificationMessage": "Rajesh has requested to join 7D Maths (AY21)",
+    "notificationPostedTime": 1688709631043,
+    "isNotificationRequest": true,
+    "isTag": false,
+    "isRead": false,
+    "notId": 5
+  },
+  {
+    "notificationMessage": "Vijay has posted images to Maths (AY21)",
+    "notificationPostedTime": 1688947152499,
+    "isNotificationRequest": false,
+    "isTag": false,
+    "isRead": false,
+    "notId": 6
+  },
+  {
+    "notificationMessage": "Vijay has posted Images to English (AY21)",
+    "notificationPostedTime": 1688939222490,
+    "isNotificationRequest": false,
+    "isTag": false,
+    "isRead": false,
+    "notId": 7
+  },
+  {
+    "notificationMessage": "Sonia Milton has tagged you in a Post",
+    "notificationPostedTime": 1688939112100,
+    "isNotificationRequest": false,
+    "isTag": true,
+    "isRead": true,
+    "notId": 8
+  },
+  {
+    "notificationMessage": "Sonia Milton has requested to Join 6B Maths (AY21)",
+    "notificationPostedTime": 1688600306993,
+    "isNotificationRequest": true,
+    "isTag": false,
+    "isRead": true,
+    "notId": 9
+  },
+  {
+    "notificationMessage": "Dharmesh has requested to Join 6B Maths (AY21)",
+    "notificationPostedTime": 1688519594993,
+    "isNotificationRequest": true,
+    "isTag": false,
+    "isRead": false,
+    "notId": 10
+  },
+  {
+    "notificationMessage": "Mithali has requested to Join 7D Maths (AY21)",
+    "notificationPostedTime": 1688685778699,
+    "isNotificationRequest": true,
+    "isTag": false,
+    "isRead": true,
+    "notId": 11
+  },
+  {
+    "notificationMessage": "Mithali has posted Images to Maths (AY21)",
+    "notificationPostedTime": 1687779345566,
+    "isNotificationRequest": false,
+    "isTag": false,
+    "isRead": false,
+    "notId": 12
+  },
+  {
+    "notificationMessage": "Dharmesh Has posted Images to English (AY21)",
+    "notificationPostedTime": 1687692945566,
+    "isNotificationRequest": false,
+    "isTag": false,
+    "isRead": false,
+    "notId": 13
+  },
+  {
+    "notificationMessage": "Neha Verma has tagged you in a Post",
+    "notificationPostedTime": 1688871732499,
+    "isNotificationRequest": false,
+    "isTag": true,
+    "isRead": false,
+    "notId": 14
+  },
+  {
+    "notificationMessage": "Dipin era has tagged you in a group post",
+    "notificationPostedTime": 1688950920110,
+    "isNotificationRequest": false,
+    "isTag": true,
+    "isRead": true,
+    "notId": 15
+  },
+  {
+    "notificationMessage": "Mithali has tagged you in a post",
+    "notificationPostedTime": 1688788831043,
+    "isNotificationRequest": false,
+    "isTag": true,
+    "isRead": false,
+    "notId": 16
+  },
+  {
+    "notificationMessage": "Dharmesh has tagged you in a group post",
+    "notificationPostedTime": 1688681220499,
+    "isNotificationRequest": false,
+    "isTag": true,
+    "isRead": true,
+    "notId": 17
+  },
+  {
+    "notificationMessage": "Vijay has tagged you in a group post",
+    "notificationPostedTime": 1688681220499,
+    "isNotificationRequest": false,
+    "isTag": true,
+    "isRead": false,
+    "notId": 18
+  }
+]

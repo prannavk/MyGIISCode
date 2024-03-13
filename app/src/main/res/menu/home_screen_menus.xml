@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/searchHome"
+        android:enabled="true"
+        android:icon="@drawable/searchglassicon"
+        android:title="Search"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/notificationsHome"
+        android:enabled="true"
+        android:icon="@drawable/bellicon"
+        android:title="Notifications"
+        android:visible="true"
+        app:showAsAction="always" />
+
+</menu>

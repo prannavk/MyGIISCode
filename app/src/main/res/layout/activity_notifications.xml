@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.NotificationsActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/notificationsHomeToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:outlineProvider="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Notification"
+            app:titleTextAppearance="@style/MyToolBarAppearance">
+
+            <include
+                android:id="@+id/tb_incl1"
+                layout="@layout/activity_toolbar_layout_h" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/notif_Tabs"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notificationsHomeToolBar"
+            app:tabBackground="@drawable/bubble_bar_bg"
+            app:tabSelectedTextColor="@color/giis_purple"
+            app:tabTextAppearance="@style/MyTabAppearance"
+            app:tabTextColor="@color/post_cg_grey" />
+
+        <View
+            android:id="@+id/line_tab_n"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/post_cg_grey"
+            app:layout_constraintBottom_toTopOf="@id/notif_Frags_vp2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notif_Tabs" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/notif_Frags_vp2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_tab_n" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

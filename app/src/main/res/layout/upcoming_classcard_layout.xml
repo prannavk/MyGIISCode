@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="classDetails"
+            type="com.giis.mobileappproto1.data.models.ClassDetails1DTO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/main_class_card"
+            android:layout_width="@dimen/_144sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:foregroundGravity="center_vertical"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/class_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="@{classDetails.classSubjectDetail}"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/topic_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_bold"
+                    android:text="@{classDetails.subjectTopicDetail}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@id/class_Tv"
+                    app:layout_constraintStart_toStartOf="@id/class_Tv"
+                    app:layout_constraintTop_toBottomOf="@id/class_Tv" />
+
+                <TextView
+                    android:id="@+id/timing_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:fontFamily="@font/notosans_regular"
+                    android:text="@{classDetails.classTimeSlotDetail}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/class_Tv"
+                    app:layout_constraintStart_toStartOf="@id/class_Tv"
+                    app:layout_constraintTop_toBottomOf="@id/topic_Tv"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/status_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@drawable/classcard_drawble"
+            android:fontFamily="@font/notosans_regular"
+            android:padding="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_6sdp"
+            android:text="@{classDetails.classStatusDetail}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            android:translationZ="@dimen/_5sdp"
+            android:outlineProvider="none"
+            app:layout_constraintBottom_toBottomOf="@id/main_class_card"
+            app:layout_constraintEnd_toEndOf="@id/main_class_card"
+            app:layout_constraintStart_toStartOf="@id/main_class_card"
+            app:layout_constraintTop_toBottomOf="@id/main_class_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

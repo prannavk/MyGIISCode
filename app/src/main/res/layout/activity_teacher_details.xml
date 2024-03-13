@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="profileDetails"
+            type="com.giis.mobileappproto1.data.models.ProfileRelevantDetailsDTO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbartdtmain"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/ghost_white"
+            android:elevation="@dimen/_20sdp"
+            android:outlineSpotShadowColor="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scrollableContents"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbartdtmain"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circleImageView"
+                    android:layout_width="@dimen/_84sdp"
+                    android:layout_height="@dimen/_84sdp"
+                    android:layout_marginTop="20dp"
+                    imageFromUrl="@{profileDetails.profilePictureUrl}"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="right"
+                    app:constraint_referenced_ids="circleImageView" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/NamePriField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_19sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@{profileDetails.namePrimaryField}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_17ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/circleImageView"
+                    app:layout_constraintStart_toStartOf="@id/barrier2"
+                    app:layout_constraintTop_toTopOf="@id/circleImageView"
+                    app:layout_constraintVertical_bias="0.41" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/DetailsPriField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:padding="0dp"
+                    android:text="@string/teacher_giis_noida"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@id/barrier2"
+                    app:layout_constraintTop_toBottomOf="@id/NamePriField" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/EmpIDTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/employee_id"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@id/barrier2"
+                    app:layout_constraintTop_toBottomOf="@id/DetailsPriField" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/EmpIDDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/empiddetail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/barrier2"
+                    app:layout_constraintTop_toBottomOf="@id/EmpIDTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/GradeTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/gradetag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/EmpIDTag"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.36"
+                    app:layout_constraintStart_toEndOf="@id/EmpIDTag"
+                    app:layout_constraintTop_toTopOf="@id/EmpIDTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/GradeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/gradeDetail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/GradeTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/GradeTag"
+                    app:layout_constraintTop_toBottomOf="@id/GradeTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PITag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/personal_information"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/EmpIDDetail" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="20dp" />
+
+                <ImageView
+                    android:id="@+id/PIdropIc"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:contentDescription="dropdownPI"
+                    android:src="@drawable/updefault"
+                    app:layout_constraintBottom_toBottomOf="@id/PITag"
+                    app:layout_constraintEnd_toEndOf="@id/guideline3"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@id/PITag"
+                    app:layout_constraintTop_toTopOf="@id/PITag"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIfnTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/first_nametag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/PITag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIfnDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@{profileDetails.firstName}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/PIfnTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/PIfnTag"
+                    app:layout_constraintTop_toBottomOf="@id/PIfnTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIphoneTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/phone_number_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/PIfnDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIphoneDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/phone_num_detail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/PIphoneTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/PIphoneTag"
+                    app:layout_constraintTop_toBottomOf="@id/PIphoneTag" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIlnTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/last_name_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toTopOf="@id/PIfnTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIlnDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@{profileDetails.lastName}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/PIlnTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/PIlnTag"
+                    app:layout_constraintTop_toBottomOf="@id/PIlnTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIdobTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/dob_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/PIlnDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIdobDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/dobdetail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/PIdobTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/PIdobTag"
+                    app:layout_constraintTop_toBottomOf="@id/PIdobTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIemailTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/official_email_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/PIphoneDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIemailDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/officialemail_detail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/PIemailTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/PIemailTag"
+                    app:layout_constraintTop_toBottomOf="@id/PIemailTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIskypeTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/skype_id_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/PIemailDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIskypeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/bessie_c_detail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/PIskypeTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/PIskypeTag"
+                    app:layout_constraintTop_toBottomOf="@id/PIskypeTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIzoomidTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/zoom_id_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/PIdobDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIzoomidDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/zoom_id_detail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/PIzoomidTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/PIzoomidTag"
+                    app:layout_constraintTop_toBottomOf="@id/PIzoomidTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIaddrTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/address_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/PIzoomidDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIaddrDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:maxLines="3"
+                    android:minLines="1"
+                    android:text="@string/address_detail"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintBottom_toTopOf="@id/barrier3"
+                    app:layout_constraintEnd_toEndOf="@id/PIaddrTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/PIaddrTag"
+                    app:layout_constraintTop_toBottomOf="@id/PIaddrTag" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="PIdobDetail,PIfnDetail,PIlnTag,PIfnTag,PIphoneTag,PIphoneDetail,PIdobTag,PIlnDetail,PIemailDetail,PIskypeDetail,PIemailTag,PIskypeTag,PIzoomidTag,PIaddrTag,PIzoomidDetail,PIaddrDetail"
+                    app:layout_constraintBottom_toTopOf="@id/PIendLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/PITag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/PIendLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@color/dark_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="PIaddrDetail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AITag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/academic_details_tag"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/PIendLine" />
+
+                <ImageView
+                    android:id="@+id/AIdropIc"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:contentDescription="AI Dropdown icon"
+                    android:src="@drawable/updefault"
+                    app:layout_constraintBottom_toBottomOf="@id/AITag"
+                    app:layout_constraintEnd_toEndOf="@id/guideline3"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@id/AITag"
+                    app:layout_constraintTop_toTopOf="@id/AITag"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIcampusTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/campus_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/AITag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIcampusDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@{profileDetails.campusName}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/AIcampusTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/AIcampusTag"
+                    app:layout_constraintTop_toBottomOf="@id/AIcampusTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIlocTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/location_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toTopOf="@id/AIcampusTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIlocDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/location_details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/AIlocTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/AIlocTag"
+                    app:layout_constraintTop_toBottomOf="@id/AIlocTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIcurrTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/curriculum_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/AIcampusDetails" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIcurrDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/curriculum_details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/AIcurrTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/AIcurrTag"
+                    app:layout_constraintTop_toBottomOf="@id/AIcurrTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIdeptTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/department_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toTopOf="@id/AIcurrTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIdeptDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_24sdp"
+                    android:background="@color/dark_gray"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/department_details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="@id/AIdeptTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/AIdeptTag"
+                    app:layout_constraintTop_toBottomOf="@id/AIdeptTag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIsubTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/subject_tag"
+                    android:textColor="@color/dim_gray"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/AIcurrDetails" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIsubDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_22sdp"
+                    android:background="@color/dark_gray"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@string/subject_details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="@id/AIsubTag"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/AIsubTag"
+                    app:layout_constraintTop_toBottomOf="@id/AIsubTag" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids=",AIlocTag,AIdeptTag,AIcampusDetails,AIlocDetails,AIcampusTag,AIdeptDetails,AIsubDetails,AIcurrDetails,AIsubTag,AIcurrTag"
+                    app:layout_constraintBottom_toTopOf="@id/AIendLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/AITag" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/AIendLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@color/dark_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrier4" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="AIsubDetails" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/RRTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/awanzamanregularfont"
+                    android:text="@string/roles_and_responsibility_tag"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/AIendLine" />
+
+                <ImageView
+                    android:id="@+id/RRdropIc"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:contentDescription="RR Dropdown icon"
+                    android:src="@drawable/updefault"
+                    app:layout_constraintBottom_toBottomOf="@id/RRTag"
+                    app:layout_constraintEnd_toEndOf="@id/guideline3"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@id/RRTag"
+                    app:layout_constraintTop_toTopOf="@id/RRTag"
+                    tools:ignore="HardcodedText" />
+
+                <!--            <androidx.recyclerview.widget.RecyclerView-->
+                <!--                android:id="@+id/rrDetailsRV"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="@dimen/_8sdp"-->
+                <!--                android:orientation="vertical"-->
+                <!--                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+                <!--                app:layout_constraintEnd_toEndOf="@id/guideline3"-->
+                <!--                app:layout_constraintStart_toStartOf="@id/guideline"-->
+                <!--                app:layout_constraintTop_toBottomOf="@id/RRTag" />-->
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/rrflexbox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/endwhitelineinvisible"
+                    app:layout_constraintEnd_toEndOf="@id/guideline3"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/RRTag">
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/endwhitelineinvisible"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/guideline3"
+                    app:layout_constraintStart_toStartOf="@id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/rrflexbox" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
